@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import songs.Song;
 import persistence.user_CRUD;
+import user.User;
 /**
  *
  * @author student
@@ -58,6 +59,9 @@ public class Login extends HttpServlet {
             request.getSession().setAttribute("uname", username);
             request.setAttribute("userSongs" , uinfo.getAllSongs());
             
+            User user = new User(username); // store the username into the user class to fetch the id easier
+            request.getSession().setAttribute("user", user);
+            
             RequestDispatcher rd = request.getRequestDispatcher("userSongs.jsp");
             rd.forward(request, response);       
         
@@ -66,20 +70,20 @@ public class Login extends HttpServlet {
     }
     
     private userInfo getUserInfo(String uname, String password){
-        
+//        
         userInfo uf = new userInfo();
-        
-        try{
-            uf.addSong(new Song("Shiver", "John Summit"));
-            uf.addSong(new Song("Rhythm Machine", "Westend"));
-            uf.addSong(new Song("Biggest Regret", "Gorgon City"));
-            uf.addSong(new Song("Children", "Tinlicker"));
-            uf.addSong(new Song("Upside Down", "Meduza"));
-            uf.addSong(new Song("Mwaki", "Zerb"));
-        } catch (Exception ex){
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE,null,ex);
-            System.out.println("Error");
-        }
+//        
+//        try{
+//            uf.addSong(new Song("Shiver", "John Summit"));
+//            uf.addSong(new Song("Rhythm Machine", "Westend"));
+//            uf.addSong(new Song("Biggest Regret", "Gorgon City"));
+//            uf.addSong(new Song("Children", "Tinlicker"));
+//            uf.addSong(new Song("Upside Down", "Meduza"));
+//            uf.addSong(new Song("Mwaki", "Zerb"));
+//        } catch (Exception ex){
+//            Logger.getLogger(Login.class.getName()).log(Level.SEVERE,null,ex);
+//            System.out.println("Error");
+//        }
         return uf; 
     }
 

@@ -11,12 +11,21 @@ package songs;
  */
 public class Song {
     
+    private int id;
     private String name, artist;
     
-    public Song(String name, String artist){
+    public Song(int id, String name, String artist){
+        this.id = id;
         this.name = name;
         this.artist = artist;
         
+    }
+    public int getID(){
+        return this.id;
+    }
+    
+    public void setID(int id){
+        this.id = id;
     }
     
     public String getName(){

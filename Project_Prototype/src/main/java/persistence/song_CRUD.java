@@ -27,14 +27,15 @@ public class song_CRUD {
             rs = ps.executeQuery();
             
             while (rs.next()) {
+                int sID = rs.getInt("id");
                 String sName = rs.getString("songName");
                 String sArtist = rs.getString("artist");
-                Song song = new Song(sName, sArtist);
+                Song song = new Song(sID, sName, sArtist);
                 songs.add(song);
             }
         } catch (Exception e) {
             e.printStackTrace();
-}
+        }
     return songs;
 
     }

@@ -18,6 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import songs.Song;
+import user.User;
+import persistence.user_CRUD;
+import persistence.playlist_CRUD;
 
 /**
  *
@@ -39,6 +42,31 @@ public class add extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        String songIDString = request.getParameter("songID");
+        int songID = Integer.parseInt(songIDString); 
+        
+        User user = (User) request.getSession().getAttribute("user"); // when successful log in, i set the current session user as an attribute
+        String username = user.getUsername();
+        
+        String playlistName = username + "Playlist";
+        
+        int userID = user_CRUD.getUserID(username);
+        
+        playlist_CRUD.addSongToPlaylist(playlistName, userID, songID);
+        
+        
+        
+//        int userID = user_CRUD.getUserID(username);
+//        ArrayList<Song> playlist = playlist_CRUD.getPlaylist(userID);
+        
+//        String songArtist = (String) request.getParameter("songArtist");
+        
+//        
+//        helper.userInfo dbt = user_CRUD.read(username, password);
+//        
+//        userInfo uinfo = getUserInfo(username, password);
+//        request.setAttribute("uinfo", uinfo);
+
       //  String title = request.getParameter("title");
       //  String artist = request.getParameter("artist");
         

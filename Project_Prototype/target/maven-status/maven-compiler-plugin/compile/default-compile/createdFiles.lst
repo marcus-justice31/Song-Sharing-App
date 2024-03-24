@@ -1,2 +1,9 @@
 Login.class
-userInfo.class
+Explore.class
+Extend.class
+persistence/playlist_CRUD.class
+helper/userInfo.class
+songs/Song.class
+add.class
+persistence/song_CRUD.class
+persistence/user_CRUD.class

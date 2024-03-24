@@ -1,4 +1,5 @@
 
+import helper.userInfo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import songs.Song;
+import helper.userInfo;
 
 /**
  *
@@ -31,7 +33,7 @@ public class Explore extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+   
         RequestDispatcher rd = request.getRequestDispatcher("explore.jsp");
         rd.forward(request, response);
         

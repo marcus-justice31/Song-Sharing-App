@@ -5,8 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
+    
+    
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,4 +21,8 @@
     <center><h1 style="color: white; font-family: Montserrat">we knew you'd like that one</h1></center>
     <center><h2 style="color: white; font-family: Montserrat">thanks for using the<span style = "color: rgb(100, 178, 241);">Q</span></h2></center>
     </body>
+    
+    <form action="Explore" method="post">
+        <center><input type ="submit" value="Back" style="font-family: Montserrat;"></center>
+    </form>
 </html>

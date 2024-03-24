@@ -1,6 +1,9 @@
-/Users/marcusuy/NetBeansProjects/coe692/COE692/Project_Prototype/src/main/java/add.java
-/Users/marcusuy/NetBeansProjects/coe692/COE692/Project_Prototype/src/main/java/userInfo.java
-/Users/marcusuy/NetBeansProjects/coe692/COE692/Project_Prototype/src/main/java/songs/Song.java
-/Users/marcusuy/NetBeansProjects/coe692/COE692/Project_Prototype/src/main/java/Extend.java
-/Users/marcusuy/NetBeansProjects/coe692/COE692/Project_Prototype/src/main/java/Explore.java
-/Users/marcusuy/NetBeansProjects/coe692/COE692/Project_Prototype/src/main/java/Login.java
+/Users/marcusuy/NetBeansProjects/coe692/COE692/lab3_exc3_src/src/main/java/songs/Song.java
+/Users/marcusuy/NetBeansProjects/coe692/COE692/lab3_exc3_src/src/main/java/add.java
+/Users/marcusuy/NetBeansProjects/coe692/COE692/lab3_exc3_src/src/main/java/persistence/song_CRUD.java
+/Users/marcusuy/NetBeansProjects/coe692/COE692/lab3_exc3_src/src/main/java/helper/userInfo.java
+/Users/marcusuy/NetBeansProjects/coe692/COE692/lab3_exc3_src/src/main/java/Login.java
+/Users/marcusuy/NetBeansProjects/coe692/COE692/lab3_exc3_src/src/main/java/persistence/playlist_CRUD.java
+/Users/marcusuy/NetBeansProjects/coe692/COE692/lab3_exc3_src/src/main/java/persistence/user_CRUD.java
+/Users/marcusuy/NetBeansProjects/coe692/COE692/lab3_exc3_src/src/main/java/Explore.java
+/Users/marcusuy/NetBeansProjects/coe692/COE692/lab3_exc3_src/src/main/java/Extend.java

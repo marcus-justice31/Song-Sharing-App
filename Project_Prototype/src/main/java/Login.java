@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import helper.userInfo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import songs.Song;
-
+import persistence.user_CRUD;
 /**
  *
  * @author student
@@ -40,9 +40,17 @@ public class Login extends HttpServlet {
         String username = (String) request.getParameter("username");
         String password = (String) request.getParameter("password");
         
+        
+        helper.userInfo dbt = user_CRUD.read(username, password);
+        
         userInfo uinfo = getUserInfo(username, password);
+        request.setAttribute("uinfo", uinfo);
         
         if(username == null || password == null || username.isEmpty() || password.isEmpty()){
+            RequestDispatcher rd = request.getRequestDispatcher("loginfailed.jsp");
+            rd.forward(request, response);
+        }
+        else if (dbt==null){
             RequestDispatcher rd = request.getRequestDispatcher("loginfailed.jsp");
             rd.forward(request, response);
         }
@@ -51,11 +59,10 @@ public class Login extends HttpServlet {
             request.setAttribute("userSongs" , uinfo.getAllSongs());
             
             RequestDispatcher rd = request.getRequestDispatcher("userSongs.jsp");
-            rd.forward(request, response);
+            rd.forward(request, response);       
+        
         }
-        
-        
-        
+            
     }
     
     private userInfo getUserInfo(String uname, String password){

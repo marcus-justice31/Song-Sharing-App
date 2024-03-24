@@ -6,7 +6,10 @@
 
 <%@page import="java.util.ArrayList" %>
 <%@ page import="songs.Song" %>
-
+<%@ page import="helper.userInfo" %>
+<%@ page import="persistence.song_CRUD" %>
+<%@ page import="persistence.user_CRUD" %>
+<%@ page import="persistence.playlist_CRUD" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,7 +29,10 @@
         </FONT>
         
         <%
-            ArrayList<Song> songs = (ArrayList)request.getAttribute("userSongs");
+            String username = request.getParameter("username");
+            int userID = user_CRUD.getUserID(username);
+            System.out.println("userid is " + userID);
+            ArrayList<Song> playlist = playlist_CRUD.getPlaylist(userID);
         %>
         
         <br></br>
@@ -45,29 +51,26 @@
                     <th style = "font-family: Montserrat;">Artist</th>
                        
                     <% 
-                    for(Song song : songs){
+                    for(Song songVar : playlist){
                     %>
                     
                 </tr>
-                <td style="font-family: Montserrat"> <%=song.getName()%> </td> 
-                <td style="font-family: Montserrat"> <%=song.getArtist()%></td>
+            
+                    <td style="font-family: Montserrat"> <%=songVar.getName()%> </td> 
+                    <td style="font-family: Montserrat"> <%=songVar.getArtist()%></td>
                 
                 <% } %>
+                
                 
             </table>
            
         </form>
         
-                <br></br>
-               
-                <form action="Explore" method="post">
-                    
-                    <center><input type ="submit" value="explore" style="font-family: Montserrat;"></center>
-                    
-                </form>
-        
-        
-        
+        <br></br>
+
+        <form action="Explore" method="post">
+            <center><input type ="submit" value="explore" style="font-family: Montserrat;"></center>
+        </form>
     </body>
 
 </html> 

@@ -1,4 +1,8 @@
 <%@ page import="songs.Song" %>
+<%@ page import="helper.userInfo" %>
+<%@ page import="persistence.song_CRUD" %>
+<%@ page import="persistence.user_CRUD" %>
+<%@ page import="persistence.playlist_CRUD" %>
 <%@page import="java.util.ArrayList" %>
 
 <html>
@@ -15,7 +19,7 @@
     <body style="background-color: black;">
         
         
-        
+   
         
         <FONT style="font-family: Montserrat;"><center><h1><span style="color: white;">more tracks,</span><span style="color: rgb(100, 178, 241);"> just for you</span></h1></center></FONT>
 
@@ -27,8 +31,9 @@
                 <th>Artist</th>
                 <th>Add</th>
 
-            <tr>
+            </tr>
                 
+            <% for(int i = 0; i < songs.size())
             <tr>
     <td>Lifetime</td>
     <td>Swedish House Mafia</td>
@@ -90,16 +95,17 @@
 </tr>
 
 <tr style = "font-family: Montserrat;">
-    <td>Satisfaction</td>
-    <td>Benny Benassi</td>
+    <td>Promeses</td>
+    <td>Tchami</td>
     <td><input type="submit" value="Add"></td>
 </tr>
 
 <tr style = "font-family: Montserrat;">
-    <td>Party Rock Anthem</td>
-    <td>LMFAO</td>
-    <td style = "font-family: Montserrat;"> <input type="submit" value="Add"> </td>
+    <td>Carry You</td>
+    <td>Martin Garrix</td>
+    <td><input type="submit" value="Add"></td>
 </tr>
+
 
         </table>
 
